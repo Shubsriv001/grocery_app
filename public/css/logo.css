@@ -1,0 +1,56 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-svg {
+    width: 40px;
+    height: 40px;
+    animation: bounce 2s infinite;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #4f46e5, #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #4f46e5, #06b6d4);
+    transition: width 0.3s ease;
+}
+
+.logo-container:hover .logo-text::after {
+    width: 100%;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Dark mode styles */
+[data-bs-theme="dark"] .logo-text {
+    background: linear-gradient(45deg, #818cf8, #22d3ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+[data-bs-theme="dark"] .logo-text::after {
+    background: linear-gradient(45deg, #818cf8, #22d3ee);
+}

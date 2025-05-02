@@ -1,0 +1,17 @@
+INSTRUCTIONS TO FIX SESSION ISSUES
+
+Please make the following changes to your .env file:
+
+1. Find this line:
+SESSION_DRIVER=database
+
+2. Change it to:
+SESSION_DRIVER=file
+
+3. Save the file and restart your Laravel server
+
+This will switch your application to use file-based sessions instead of database sessions, which should resolve the current error.
+
+After making this change, run:
+php artisan config:clear
+php artisan serve
